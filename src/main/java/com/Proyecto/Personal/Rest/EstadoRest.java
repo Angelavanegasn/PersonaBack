@@ -18,8 +18,10 @@ public class EstadoRest {
     @Autowired
     private EstadoService estadoService;
 
-    @GetMapping("{id}")
-    private ResponseEntity<List<Estado>> getAllEstadoByPais(@PathVariable("id") long idpais) {
-        return ResponseEntity.ok(estadoService.findAllByCountry(idpais));
+
+    @GetMapping ("{id}")
+    private ResponseEntity<List<Estado>> getAllEstadosByPais (@PathVariable("id") Long idPais){
+        return ResponseEntity.ok(estadoService.findAllByCountry(idPais));
+
     }
 }

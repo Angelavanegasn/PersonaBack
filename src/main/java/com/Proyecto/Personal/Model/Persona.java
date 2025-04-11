@@ -4,10 +4,12 @@ package com.Proyecto.Personal.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Table(name = "persona")
 @Data
 @Entity
-public class Persona {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

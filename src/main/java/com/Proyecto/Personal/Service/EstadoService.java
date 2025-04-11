@@ -12,8 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class EstadoService implements EstadoRepository{
@@ -47,6 +49,15 @@ public class EstadoService implements EstadoRepository{
         }
         return estadoRespuesta;
     }
+
+
+/*
+    public List<Estado> findAllByCountry(Long countryId) {
+        return estadoRepository.findAll().stream()
+                .filter(estado -> Objects.equals(estado.getPais().getId(), countryId))
+                .collect(Collectors.toList());
+    }
+    */
 
     @Override
     public void deleteAllInBatch(Iterable<Estado> entities) {
