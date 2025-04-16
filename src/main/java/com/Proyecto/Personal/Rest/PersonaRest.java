@@ -17,6 +17,7 @@ public class PersonaRest {
     @Autowired
     private PersonaService personaService;
 
+
     @GetMapping
     public ResponseEntity<List<Persona>> getAllPersona() {
         return ResponseEntity.ok(personaService.findAll());
@@ -31,4 +32,5 @@ public class PersonaRest {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         }
+
     }
